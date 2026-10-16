@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Open Source Security in the Age of AI | Abu Sayem Nur</title>
+
+  <meta
+    name="description"
+    content="An article exploring open-source software security, AI-assisted vulnerability discovery, dependency risks, and practical security strategies."
+  >
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .article-page {
+      width: min(900px, 92%);
+      margin: 0 auto;
+      padding: 60px 0 90px;
+    }
+
+    .article-back {
+      display: inline-block;
+      margin-bottom: 35px;
+      text-decoration: none;
+      color: var(--accent-color, #6366f1);
+      font-weight: 600;
+    }
+
+    .article-back:hover {
+      opacity: 0.75;
+    }
+
+    .article-category {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: var(--accent-color, #6366f1);
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin: 0 0 22px;
+    }
+
+    .article-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.8;
+      margin-bottom: 25px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 35px;
+    }
+
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 38px;
+      background: rgba(128, 128, 128, 0.12);
+    }
+
+    .article-content {
+      font-size: 1.02rem;
+      line-height: 1.95;
+    }
+
+    .article-content h2 {
+      font-size: clamp(1.45rem, 3vw, 1.9rem);
+      line-height: 1.35;
+      margin: 42px 0 15px;
+    }
+
+    .article-content p {
+      margin: 0 0 22px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-left: 25px;
+      margin-bottom: 25px;
+    }
+
+    .article-content li {
+      margin-bottom: 12px;
+    }
+
+    .article-content a {
+      color: var(--accent-color, #6366f1);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .article-note {
+      padding: 20px 22px;
+      margin: 28px 0;
+      border-left: 3px solid var(--accent-color, #6366f1);
+      background: rgba(128, 128, 128, 0.08);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .article-footer {
+      margin-top: 50px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(128, 128, 128, 0.25);
+    }
+
+    @media (max-width: 600px) {
+      .article-page {
+        padding-top: 35px;
+      }
+
+      .article-title {
+        letter-spacing: -0.5px;
+      }
+
+      .article-content {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="article-page">
+
+    <a class="article-back" href="../index.html">
+      ← Back to Portfolio
+    </a>
+
+    <header>
+      <span class="article-category">Cybersecurity · Artificial Intelligence</span>
+
+      <h1 class="article-title">
+        Open Source Security in the Age of AI
+      </h1>
+
+      <p class="article-subtitle">
+        How artificial intelligence is changing vulnerability discovery,
+        open-source software security, and the way developers manage
+        software supply-chain risks.
+      </p>
+
+      <div class="article-meta">
+        <span>By Abu Sayem Nur</span>
+        <span>Research &amp; Technology</span>
+        <span>Reading time: 6–8 minutes</span>
+      </div>
+    </header>
+
+    <!-- Optional cover image:
+         Save your image at sections/assets/images/open-source-security.jpg
+         and uncomment the image element below. -->
+
+    <!--
+    <img
+      class="article-cover"
+      src="assets/images/open-source-security.jpg"
+      alt="Open-source software security and artificial intelligence"
+    >
+    -->
+
+    <article class="article-content">
+
+      <p>
+        Open-source software has become a fundamental part of modern
+        technology. From web applications and cloud infrastructure to
+        artificial intelligence systems, developers rely on external
+        libraries and frameworks to build software efficiently.
+        However, this widespread dependency also creates security risks.
+      </p>
+
+      <p>
+        As artificial intelligence advances, security researchers are
+        gaining new ways to identify potential vulnerabilities, analyze
+        code, and generate test cases. These capabilities create
+        opportunities for stronger software security, but they also
+        introduce new challenges for developers and maintainers.
+      </p>
+
+      <h2>1. The Growing Risk of Open-Source Dependencies</h2>
+
+      <p>
+        Modern applications rarely operate independently of third-party
+        software. A single project may depend on hundreds of packages,
+        each with its own dependencies and maintenance history.
+      </p>
+
+      <p>
+        If a dependency contains a vulnerability, an outdated component,
+        or a compromised release, every application that relies on it
+        may face additional risk. This is why software supply-chain
+        security has become an important part of modern cybersecurity.
+      </p>
+
+      <p>
+        Developers should maintain an inventory of dependencies, monitor
+        security advisories, review updates carefully, and remove
+        components that are no longer needed.
+      </p>
+
+      <h2>2. How AI Is Changing Vulnerability Discovery</h2>
+
+      <p>
+        AI-assisted security tools can help researchers examine large
+        codebases, identify suspicious code patterns, generate test
+        cases, and investigate possible weaknesses more efficiently.
+        These tools can support traditional techniques such as static
+        analysis, fuzz testing, and manual code review.
+      </p>
+
+      <p>
+        Projects such as Google's OSS-Fuzz demonstrate the value of
+        automated fuzz testing for finding bugs in widely used software.
+        AI may further improve parts of this process by helping generate
+        inputs, prioritize promising test cases, and explain complex
+        findings.
+      </p>
+
+      <div class="article-note">
+        <strong>Important distinction:</strong>
+        AI-generated findings require validation. A suspected
+        vulnerability is not automatically a confirmed security flaw,
+        and human review remains essential.
+      </div>
+
+      <h2>3. Why Faster Discovery Creates New Challenges</h2>
+
+      <p>
+        Better vulnerability discovery can help maintainers fix problems
+        earlier. However, the same general advances in automation may
+        also lower the effort required to search for weaknesses.
+        Organizations therefore need effective processes for validating,
+        prioritizing, and patching vulnerabilities.
+      </p>
+
+      <p>
+        Security teams should focus on practical questions:
+      </p>
+
+      <ul>
+        <li>Is the affected component actually used by the application?</li>
+        <li>Can the vulnerable code path be reached in the current environment?</li>
+        <li>Is a verified fix or security update available?</li>
+        <li>What is the potential impact if the issue is exploited?</li>
+        <li>How quickly can the organization deploy and verify a fix?</li>
+      </ul>
+
+      <h2>4. Building a More Secure Development Workflow</h2>
+
+      <p>
+        AI tools are most useful when they are part of a broader,
+        disciplined security workflow rather than a replacement for it.
+        Developers and organizations can take several practical steps:
+      </p>
+
+      <ol>
+        <li>
+          <strong>Maintain a Software Bill of Materials (SBOM):</strong>
+          Keep an accurate inventory of direct and transitive dependencies.
+        </li>
+
+        <li>
+          <strong>Automate dependency scanning:</strong>
+          Monitor packages for known vulnerabilities and available fixes.
+        </li>
+
+        <li>
+          <strong>Use testing and code review together:</strong>
+          Combine automated analysis, fuzz testing, and human review.
+        </li>
+
+        <li>
+          <strong>Prioritize remediation:</strong>
+          Assess severity, exploitability, and actual exposure before
+          deciding what to fix first.
+        </li>
+
+        <li>
+          <strong>Verify updates:</strong>
+          Test patches before deployment and confirm that the original
+          issue has been addressed.
+        </li>
+
+        <li>
+          <strong>Improve governance:</strong>
+          Establish clear policies for using AI security tools and
+          handling sensitive source code.
+        </li>
+      </ol>
+
+      <h2>5. The Role of Developers and Organizations</h2>
+
+      <p>
+        Security is a shared responsibility. Open-source maintainers
+        need sustainable support, clear disclosure processes, and
+        timely access to security fixes. Organizations need visibility
+        into their dependencies and the ability to respond when a
+        vulnerability affects their software.
+      </p>
+
+      <p>
+        Developers should also understand the limitations of automated
+        tools. AI can assist with investigation, but secure software
+        still depends on sound architecture, careful implementation,
+        testing, and responsible maintenance.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        Artificial intelligence is creating new opportunities for
+        discovering and understanding software vulnerabilities.
+        Combined with established security practices, it can help
+        developers investigate risks more efficiently and improve
+        software resilience.
+      </p>
+
+      <p>
+        The goal should not be to rely on AI alone. A stronger approach
+        combines automation, verified security research, responsible
+        disclosure, dependency management, and timely patching.
+        In an increasingly interconnected software ecosystem,
+        these practices are essential to building more trustworthy
+        technology.
+      </p>
+
+      <h2>Learn More</h2>
+
+      <ul>
+        <li>
+          <a href="https://github.com/google/oss-fuzz"
+             target="_blank" rel="noopener noreferrer">
+            Google OSS-Fuzz — Automated fuzz testing
+          </a>
+        </li>
+
+        <li>
+          <a href="https://openssf.org/"
+             target="_blank" rel="noopener noreferrer">
+            OpenSSF — Open Source Security Foundation
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.cisa.gov/"
+             target="_blank" rel="noopener noreferrer">
+            CISA — Cybersecurity and Infrastructure Security
+          </a>
+        </li>
+
+        <li>
+          <a href="https://owasp.org/"
+             target="_blank" rel="noopener noreferrer">
+            OWASP — Application Security Resources
+          </a>
+        </li>
+      </ul>
+
+      <div class="article-note">
+        <strong>Research note:</strong>
+        This article provides a general overview of AI-assisted
+        vulnerability discovery and open-source security. Verify
+        specific incident reports, CVE counts, and cost figures against
+        primary sources before adding them to a research paper or
+        publishing them as confirmed facts.
+      </div>
+
+    </article>
+
+    <footer class="article-footer">
+      <p>
+        Written by <strong>Abu Sayem Nur</strong>
+      </p>
+
+      <a class="article-back" href="../index.html">
+        ← Return to Portfolio
+      </a>
+    </footer>
+
+  </main>
+
+</body>
+</html>
